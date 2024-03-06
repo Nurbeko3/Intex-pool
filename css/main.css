@@ -51,6 +51,11 @@
     background-color: teal;
     opacity: 0;
 }
+.search-list{
+    opacity: 0;
+}
+
 .open-list{
     opacity: 1;
 }
+
