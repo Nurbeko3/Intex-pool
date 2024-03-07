@@ -1,0 +1,111 @@
+*{
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+.container{
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+header{
+    background-color: rgb(0, 147, 152);
+}
+.site-header{
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-logo{
+    color: rgb(255, 255, 255);
+    font-family: Signika;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 31px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+.navbar-list{
+    display: flex;
+}
+.navbar-item + .navbar-item{
+    margin-left: 20px;
+}
+.navbar-item{
+    color: rgb(255, 255, 255);
+    font-family: Trebuchet MS;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: 0%;
+    text-align: center;
+}
+
+.header-tel{
+    color: rgb(255, 255, 255);
+    font-family: Trebuchet MS;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 23px;
+    letter-spacing: 0%;
+    text-align: center;
+}
+
+.intro{
+    width: 100%;
+    text-align: center;
+    padding: 25px;
+    background-color: rgb(0, 147, 152);
+}
+.intro-title{
+    color: rgb(255, 255, 255);
+    font-family: Trebuchet MS;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 58px;
+    letter-spacing: 0%;
+    text-align: center;
+}
+.intro-cards{
+    margin-top: 97px;
+    margin-bottom: 100px;
+    display: flex;
+}
+.intro-card{
+    display: flex;
+    padding: 8px 13px;
+    border-radius: 0px 40px 0px 40px;
+    box-shadow: 0px 7px 15px 0px rgba(0, 0, 0, 0.25);
+    background: rgb(0, 147, 152);
+}
+.intro-card + .intro-card{
+    margin-left: 45px;
+}
+.intro-num{
+    color: rgb(255, 255, 255);
+    font-family: Trebuchet MS;
+    font-size: 65px;
+    font-weight: 700;
+    line-height: 75px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+.intro-card-info{
+    width: 280px;
+    margin-left: 19px;  
+}
+
+.intro-card-title{
+    color: rgb(255, 255, 255);
+    font-family: Trebuchet MS;
+    font-size: 24px;
+    font-weight: 700;
+}
+.intro-card-text{
+    color: rgb(255, 255, 255);
+    font-family: Trebuchet MS;
+    font-size: 13px;
+}

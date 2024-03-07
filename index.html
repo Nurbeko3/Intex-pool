@@ -3,78 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/main.css">
-    <title>Intex admin panel</title>
-    <style type="text/tailwindcss">
-        @layer unutilities{
-            .content-auto {
-                content-visibility: auto;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="./css/index.css">
+    <title>ui Intex</title>
 </head>
-<body class="bg-[#F8F8F8]">
-    <div class="flex">
-        <nav class="w-[25%] bg-white shadow-md h-[108vh]">
-            <div class="border-b-[2px] py-[34px] px-[40px] border-teal-500">
-                <h2 class="text-teal-500 font-bold text-[22px]">INTEX-MARKET.UZ</h2>
-            </div>
-            <ul class="flex flex-col px-[34px] py-[20px] cursor-pointer text-[20px] text-teal-500">
-                <li>Products</li>
-            </ul>
-        </nav>
-        <div class="w-[100%]">
-            <div class="border-b-[2px] py-[34px] px-[40px] flex items-center justify-end border-teal-500">
-                <a class="text-teal-500 font-bold text-[22px]" href="/">See the site</a>
-            </div>
-            <div class="flex items-center justify-between p-5">
-                <div class="search-wrapper">
-                    <input class="p-[11px] rounded-[25px]  w-[377px] border-[1px] border-black search-input type="text" placeholder="Search">
-                    <ul class="search-list absolute p-[10px] w-[100%]  right-0 left-0 mx-auto rounded-[20px] bg-teal-500">
+<body>
+    
+    <header>
+        <div class="container">
+            <div class="site-header">
+                <a class="header-logo" href="/">INTEX-MARKET.UZ</a>
+                <nav class="site-navbar">
+                    <ul class="navbar-list">
+                        <li class="navbar-item">Каркасные бассейны</li>
+                        <li class="navbar-item">Надувные бассейны</li>
                     </ul>
-                </div>
-                <button class="add-button font-bold text-white bg-teal-500 text-[18px] w-[222px] rounded-[25px] p-3 hover:opacity-[0.5] duration-200">+ Add Product</button>
-            </div>
-            <ul class="nav-list cursor-pointer flex items-center justify-center gap-10 py-5">
-                <li id="0" class="item1 font-bold text-teal-500 text-[22px]">Frame</li>
-                <li id="1" class="item2 font-bold text-teal-500 text-[22px]">Inflatable</li>
-            </ul>
-            <div class="p-5">
-                <table class="m-auto">
-                    <thead class="">
-                        <tr class="">
-                            <th class="bg-slate-200 w-[250px] p-3 rounded-l-[25px]">Izobrajenia</th>
-                            <th class="bg-slate-200 w-[250px] p-3 ">Name</th>
-                            <th class="bg-slate-200 w-[250px] p-3 ">Price($)</th>
-                            <th class="bg-slate-200 w-[250px] p-3 ">Quanity</th>
-                            <th class="bg-slate-200 w-[250px] p-3 ">Status</th>
-                            <th class="bg-slate-200 w-[250px] p-3 rounded-r-[25px]">Deystviya</th>
-                        </tr>
-                    </thead>
-                    <tbody class="tbody translate-y-[10px]">
-                        
-                    </tbody>
-                </table>
+                </nav>
+                <a class="header-tel" href="/">(99) 911 02 04</a>
+                <img class="header-img" src="./images/Group 274 1.svg" alt="Header image">
             </div>
         </div>
-    </div>
-    
-    <div id="modal-wrapper" class="modal-wrapper">
-        <div class="modal"></div>
-    </div>
-    
-    <script src="./js/app.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        clifford: '#da373d',
-                    }
-                }
-            }
-        }
-    </script>
+    </header>
+    <main>
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero">
+                    <img class="hero-img" src="./images/hero-img.png" alt="Hero img here">
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <section class="intro-section">
+            <div class="container">
+                <div class="intro">
+                    <h1 class="intro-title">Сезонная распродажа!</h1>
+                </div>
+            
+                <div class="intro-cards">
+
+                    <div class="intro-card">
+                        <p class="intro-num">1</p>
+                        <div class="intro-card-info">
+                            <h2 class="intro-card-title">Бесплатная доставка бассейна</h2>
+                            <p class="intro-card-text">Мы ценим наших клиентов, можете быть уверены в качестве нашего сервиса!</p>
+                        </div>
+                    </div>
+                    <div class="intro-card">
+                        <p class="intro-num">2</p>
+                        <div class="intro-card-info">
+                            <h2 class="intro-card-title">Специальная химия в подарок</h2>
+                            <p class="intro-card-text">Специальная очищающая химия для бассейна - бесплатно</p>
+                        </div>
+                    </div>
+                    <div class="intro-card">
+                        <p class="intro-num">3</p>
+                        <div class="intro-card-info">
+                            <h2 class="intro-card-title">Гарантия качества
+                            </h2>
+                            <p class="intro-card-text">Вся продукция INTEX является оригинальной</p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </section>
+
+
+    </main>
 </body>
+<script src="./js/index.js"></script>
 </html>
