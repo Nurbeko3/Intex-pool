@@ -1,6 +1,6 @@
 *{
     box-sizing: border-box;
-    font-family: monospace;
+    font-family:Nunito Sans;
 }
 .modal-wrapper{
     position: fixed;
@@ -59,3 +59,18 @@
     opacity: 1;
 }
 
+.item1{
+    border-bottom: 2px solid transparent;
+    transition: all 0.4s;
+}
+.item1:hover {
+    border-bottom: 2px solid teal;
+}
+
+.item2{
+    border-bottom: 2px solid transparent;
+    transition: all 0.4s;
+}
+.item2:hover {
+    border-bottom: 2px solid teal;
+}
