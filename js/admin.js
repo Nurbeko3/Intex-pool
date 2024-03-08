@@ -1,6 +1,7 @@
 
 let elAddButton = document.querySelector(".add-button")
 let tBody = document.querySelector(".tbody")
+let tHead = document.querySelector(".thead")
 
 let elModalWrapper = document.querySelector(".modal-wrapper")
 let elModal = document.querySelector(".modal")
@@ -8,20 +9,35 @@ let elModal = document.querySelector(".modal")
 let elNavList = document.querySelector(".nav-list")
 let elItem1 = document.querySelector(".item1")
 let elItem2 = document.querySelector(".item2")
+let elItem3 = document.querySelector(".item3")
 
 let elSearchInput = document.querySelector(".search-input")
+
+
+let orderProduct = JSON.parse(window.localStorage.getItem("orderList")) || []
+
 
 elNavList.addEventListener("click", function(evt) {
     if(evt.target.id){
         if(evt.target.id == 0){
             elItem1.classList.add("text-teal-500")
             elItem2.classList.remove("text-teal-500")
+            elItem3.classList.remove("text-teal-500")
+            renderProducts(products, tBody, evt.target.id)
         }
-        else{
+        else if(evt.target.id == 1) {
             elItem2.classList.add("text-teal-500")
             elItem1.classList.remove("text-teal-500")
+            elItem3.classList.remove("text-teal-500")
+            renderProducts(products, tBody, evt.target.id)
         }
-        renderProducts(products, tBody, evt.target.id)
+        else{
+            elItem2.classList.remove("text-teal-500")
+            elItem1.classList.remove("text-teal-500")
+            elItem3.classList.add("text-teal-500")
+            renderProducts(products, tBody, evt.target.id)
+        }
+        renderProducts(orderProduct, tBody, evt.target.id)
     }
 })
 
@@ -151,6 +167,31 @@ function renderProducts(arr, list, id){
             list.appendChild(elTr)
         }
     })
+    if(id == "2"){
+        tHead.innerHTML = `
+        <tr>
+        <th class="bg-slate-200 w-[250px] p-3 rounded-l-[25px]">Client name</th>
+        <th class="bg-slate-200 w-[250px] p-3>Client number</th>
+        <th class="bg-slate-200 w-[250px] p-3>Image</th>
+        <th class="bg-slate-200 w-[250px] p-3>Price</th>
+        <th class="bg-slate-200 w-[250px] p-3>Adress</th>
+        <th class="bg-slate-200 w-[250px] p-3>Time</th>
+        <th class="bg-slate-200 w-[250px] p-3 rounded-r-[25px]">Deystviya</th>
+        </tr>
+        `
+        arr.map(item => {
+            let elTr = document.createElement("li")
+            elTr.innerHTML = `
+            <td class="text-center p-1 bg-slate-300 rounded-l-[20px]">${item.name}</td>
+            <td class="text-center p-1 bg-slate-300">${item.phoneNumber}</td>
+            <img class="mx-auto" src=${item.img} alt="Render img" width="40" height="40"/>
+            <td class="text-center p-1 bg-slate-300 text-[20px]">${item.price}</td>
+            <td class="text-center p-1 bg-slate-300 text-[20px]">${item.adress}</td>
+            <td class="text-center p-1 bg-slate-300 text-[20px] rounded-r-[20px]">${item.time}</td>
+            `
+            tBody.appendChild(elTr)
+        } )
+    }
 }
 renderProducts(products, tBody, 0)
 
@@ -317,6 +358,6 @@ elSearchInput.addEventListener("keyup", function(evt){
 elSearchInput.addEventListener("blur", function(evt){
     elSearchList.classList.remove("open-list")
 })
-
-
 //Search end
+
+

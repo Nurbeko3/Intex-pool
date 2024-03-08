@@ -70,3 +70,10 @@
 .item2:hover {
     border-bottom: 2px solid teal;
 }
+.item3{
+    border-bottom: 2px solid transparent;
+    transition: all 0.4s;
+}
+.item3:hover {
+    border-bottom: 2px solid teal;
+}
