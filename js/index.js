@@ -26,7 +26,7 @@ function renderProduct(arr, list, id){
             <h2>${item.name}</h2>
             <small>${item.oldPrise}</small>
             <p>${item.newPrise}</p>
-            <button onclick="orderProduct(${item.id})">Buyurtma bermoq</button>
+            <button class="Buyurtma-btn" onclick="orderProduct(${item.id})">Buyurtma bermoq</button>
             </div>
             `
             

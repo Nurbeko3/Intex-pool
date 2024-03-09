@@ -35,9 +35,9 @@ elNavList.addEventListener("click", function(evt) {
             elItem2.classList.remove("text-teal-500")
             elItem1.classList.remove("text-teal-500")
             elItem3.classList.add("text-teal-500")
-            renderProducts(products, tBody, evt.target.id)
+            renderProducts(orderProduct, tBody, evt.target.id)
         }
-        renderProducts(orderProduct, tBody, evt.target.id)
+
     }
 })
 
@@ -142,26 +142,37 @@ function renderProducts(arr, list, id){
     list.innerHTML = ""
     arr.filter(item => {
         if(item.type == id){
+            tHead.innerHTML = `
+            <tr>
+                <th class="bg-slate-200 w-[250px] p-3 rounded-l-[25px]">Rasmkar</th>
+                <th class="bg-slate-200 w-[250px] p-3">Nomi</th>
+                <th class="bg-slate-200 w-[250px] p-3">Narxi</th>
+                <th class="bg-slate-200 w-[250px] p-3">Miqdori</th>
+                <th class="bg-slate-200 w-[250px] p-3">Holati</th>
+                <th class="bg-slate-200 w-[250px] p-3">Batafsil</th>
+            
+                </tr>
+            `
             let elTr = document.createElement("tr")
             elTr.innerHTML = `
             <td class="text-center p-1 bg-slate-300 rounded-l-[20px]">
-            <img class="mx-auto" src=${item.img} alt="Render img" width="40" height="40"/>
+                <img class="mx-auto" src=${item.img} alt="Render img" width="40" height="40"/>
             </td>
             <td class="text-center p-1 bg-slate-300 text-[20px]">${item.name}</td>
             <td class="text-center p-1 bg-slate-300 flex flex-col">
-            <span class="text-[13px] line-through ">${item.oldPrise}</span>
-            <strong class="text-[18px] line-throw">${item.newPrise}</strong>
+                <span class="text-[13px] line-through ">${item.oldPrise}</span>
+                <strong class="text-[18px] line-throw">${item.newPrise}</strong>
             </td>
             <td class="text-center p-1 bg-slate-300">${item.quantity}</td>
             <td class="text-center p-1 bg-slate-300 ${item.status == "1" ? "text-green-500" : ""} ${item.status == "2" ? "text-yellow-500" : ""} ${item.status == "3" ? "text-red-500" : ""}">
-            ${item.status == "0" ? "Простой" : ""}
-            ${item.status == "1" ? "Рекомендуем" : ""}
-            ${item.status == "2" ? "Cкидка" : ""}
-            ${item.status == "3" ? "Нет в наличии" : ""}
+                ${item.status == "0" ? "Простой" : ""}
+                ${item.status == "1" ? "Рекомендуем" : ""}
+                ${item.status == "2" ? "Cкидка" : ""}
+                ${item.status == "3" ? "Нет в наличии" : ""}
             </td>
             <td class="text-center p-1 bg-slate-300 rounded-r-[20px]">
-            <button onclick="updateProduct(${item.id})" class="p-1 bg-green-500 text-white rounded-md">Update</button>
-            <button onclick="deleteProduct(${item.id})" class="p-1 bg-red-500 text-white rounded-md">Delete</button>
+                <button onclick="updateProduct(${item.id})" class="p-1 bg-green-500 text-white rounded-md">Update</button>
+                <button onclick="deleteProduct(${item.id})" class="p-1 bg-red-500 text-white rounded-md">Delete</button>
             </td>
             `
             list.appendChild(elTr)
@@ -170,26 +181,28 @@ function renderProducts(arr, list, id){
     if(id == "2"){
         tHead.innerHTML = `
         <tr>
-        <th class="bg-slate-200 w-[250px] p-3 rounded-l-[25px]">Client name</th>
-        <th class="bg-slate-200 w-[250px] p-3>Client number</th>
-        <th class="bg-slate-200 w-[250px] p-3>Image</th>
-        <th class="bg-slate-200 w-[250px] p-3>Price</th>
-        <th class="bg-slate-200 w-[250px] p-3>Adress</th>
-        <th class="bg-slate-200 w-[250px] p-3>Time</th>
-        <th class="bg-slate-200 w-[250px] p-3 rounded-r-[25px]">Deystviya</th>
-        </tr>
+            <th class="bg-slate-200 w-[250px] p-3 rounded-l-[25px]">Client name</th>
+            <th class="bg-slate-200 w-[250px] p-3">Client number</th>
+            <th class="bg-slate-200 w-[250px] p-3">Image</th>
+            <th class="bg-slate-200 w-[250px] p-3">Price</th>
+            <th class="bg-slate-200 w-[250px] p-3">Adress</th>
+            <th class="bg-slate-200 w-[250px] p-3">Time</th>
+            <th class="bg-slate-200 w-[250px] p-3" rounded-r-[25px]">Deystviya</th>
+
+            </tr>
         `
         arr.map(item => {
-            let elTr = document.createElement("li")
+            let elTr = document.createElement("tr")
             elTr.innerHTML = `
-            <td class="text-center p-1 bg-slate-300 rounded-l-[20px]">${item.name}</td>
-            <td class="text-center p-1 bg-slate-300">${item.phoneNumber}</td>
-            <img class="mx-auto" src=${item.img} alt="Render img" width="40" height="40"/>
-            <td class="text-center p-1 bg-slate-300 text-[20px]">${item.price}</td>
-            <td class="text-center p-1 bg-slate-300 text-[20px]">${item.adress}</td>
-            <td class="text-center p-1 bg-slate-300 text-[20px] rounded-r-[20px]">${item.time}</td>
+                <td class="text-center p-1 bg-slate-300 rounded-l-[20px]">${item.name}</td>
+                <td class="text-center p-1 bg-slate-300">${item.phoneNumber}</td>
+                  <img class="mx-auto" src=${item.img} alt="Render img" width="40" height="40"/>
+                <td class="text-center p-1 bg-slate-300 text-[20px]">${item.price}</td>
+                <td class="text-center p-1 bg-slate-300 text-[20px]">${item.adress}</td>
+                <td class="text-center p-1 bg-slate-300 text-[20px] ">${item.time}</td>
+                <td class="text-center p-1 bg-slate-300 text-[20px] rounded-r-[20px]">Check , Delete</td>
             `
-            tBody.appendChild(elTr)
+            list.appendChild(elTr)
         } )
     }
 }
@@ -200,7 +213,6 @@ renderProducts(products, tBody, 0)
 // Update Part start
 function updateProduct(id){
     let data = products.find(item => item.id == id)
-    
     
     elModalWrapper.classList.add("open-modal")
     elModal.innerHTML = `
